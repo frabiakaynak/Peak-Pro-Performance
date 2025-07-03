@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -14,17 +18,114 @@
             font-family: 'Poppins';
             background-color: #e0e0e0;
         }
+        
         nav{
-            display:flex;
+            /* display:flex; */
             /* justify-content:space-between ; */
-            align-items: center;
-            padding: 15px 25px;
+            /* align-items: center; */
+            /* padding: 10px 20px; */
             background-color: rgba(0,0,0,0.3);
             backdrop-filter:blur(8px) ; 
             /* üstüne geldiğinde arka plan blurlansın istiyorsan bunu kullanabilirsin */
-            flex-wrap: wrap;
+            /* flex-wrap: wrap; */
             position:fixed;
             width: 100%;
+            z-index: 999;
+        }
+
+        .nav-container{
+            max-width:1200px;
+            margin:0 auto;
+            padding:10px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo{
+            color:white;
+            font-size:1.5rem;
+            font-weight:bold;
+        }
+
+        .hamburger{
+            display:none;
+            font-size:0.8rem;
+            color:white;
+            cursor:pointer;
+        }
+
+        .nav-links{
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap:20px;
+            align-items: center; 
+            /*anasayfa,hakkımızda vs kkısımını hambur içinde ortaya alır*/
+            
+            
+        }
+
+        .social-icons{
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap:20px;
+            align-items: center;
+            
+        }
+
+        .nav-links li a{
+            color:white;
+            text-decoration: none;
+            /* font-size:clamp(0.8rem,1.5vw,1rem); */
+            font-size:1.5rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links li a:hover{
+            color:#ff5055;
+        }
+
+        /* Sosyal ikonlar için ekstra boşluk, ikon renkleri ve responsive ayar */
+        .social-icons li a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width:760px){
+            .hamburger{
+                display:block;
+            }
+
+            .nav-links{
+                flex-direction: column;
+                width:100%;
+                display:none;
+                background-color:rgba(0,0,0,0.85);
+                margin-top:10px;
+                padding:15px 0;
+                border-radius:10px;
+            }
+
+            .nav-links.active{
+                display:flex;
+            }
+
+            .social-icons{
+                justify-content:center;
+                margin-top:10px;
+                flex-wrap:wrap;
+            }
+            
+            .nav-container{
+                flex-direction:column;
+                align-items:center;
+            }
         }
         .logo{
             color:white;
@@ -162,15 +263,33 @@
     </style>
 </head>
 <body>
+   
     <nav>
-        <div class="logo">PEAK PRO</div>
-        <ul>
-            <li><a href="">Anasayfa</a></li>
-            <li><a href="">Hakkımızda</a></li>
-            <li><a href="#hizmetler">Hizmetler</a></li>
-            <li><a href="#contact">İletişim</a></li>
-        </ul>
+        <div class="nav-container">
+            <div class="logo">PEAK PRO</div>
+
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars fa-2x"></i>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="">Hakkımızda</a></li>
+                <li><a href="#hizmetler">Hizmetler</a></li>
+                <li><a href="#galeri">Galeri</a></li>
+                <li><a href="#egitmenler">Eğitmenlerimiz</a></li>
+                <li><a href="#contact">Destek</a></li>
+            </ul>
+
+            <ul class="social-icons" >
+                <li><a href="tel:905347317592" ><i class="fas fa-phone fa-lg"></i></a></li>
+                <li><a href="https://wa.me/905347317592?text=Merhaba%2C%20randevu%20almak%20istiyorum.
+                " target="_blank"><i class="fab fa-whatsapp fa-2x" style="color:#25D366;"></i></a></li>
+                <li><a href="https://www.instagram.com/peakpro_trainingg/" target="_blank" ><i class="fab fa-instagram fa-2x" style="color:#E4405F;"></i></a></li>
+                <li><a href="https://www.google.com/maps/place/Peak+Pro+Training/@37.9250797,40.1361297,790m/data=!3m2!1e3!4b1!4m6!3m5!1s0x40751fa13807ed35:0xe1971d40d9eab833!8m2!3d37.9250797!4d40.1361297!16s%2Fg%2F11scxx6821?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" title="Adresimiz"><i class="fas fa-map-marker-alt " style="color:#ff5055; font-size:23px;"></i></a></li>
+            </ul>
+        </div> 
     </nav>
+
     <section class="hero">
         <div>
             <h1>Peak Pro Performance</h1>
@@ -202,7 +321,7 @@
     </section>
     <section class="divider">Bilinçli hareket, gerçek değişim!</section>
     <section class="contact" id="contact">
-        <h2>Bize Ulaşın!</h2>
+        <h2>Destek almak ister misiniz?</h2>
         <form action="">
             <input type="text" placeholder="Adınız Soyadınız">
             <input type="email" placeholder="E-mail">
@@ -210,5 +329,24 @@
             <button type="submit">Gönder</button>
         </form>
     </section>
-    <footer>&copy;2025 Peak Pro Performance</footer>
+    <footer>&copy;2025 Peak Pro Performance
+        <br><i>
+        <b>Adres:</b> Fırat mah. Abdulkadir Aksu cad. 33 EE. Sur Amed Paragon 2 sitesinin, E blok altı, 21070 Kayapınar/Diyarbakır <br>
+        <b>Telefon:</b>+90 534 731 75 92 </i>
+
+    </footer>
+
+<script>
+  function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+  }
+</script>
+</body>
 </html>
+<!-- kısa-uzun açıklama  -->
+ <!-- galeri videolar -->
+  <!-- eğitmenlerimiz sekmesi eklenecek......antrenörerin fotoları ve bilgileri alınacak -->
+  <!-- biz kimiz/misyon-vizyon gibi şeyler hakkımızda ya yazılacak. -->
+ 
+    
