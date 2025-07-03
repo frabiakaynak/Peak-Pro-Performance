@@ -1,8 +1,5 @@
 # Peak Pro Performance
 
-[Canlı Demoya Gitmek İçin Tıkla](https://frabiakaynak.github.io/Peak-Pro-Performance/)
-
----
 
 ## Proje Hakkında
 
@@ -12,9 +9,9 @@ Peak Pro Performance, responsive (duyarlı) ve modern tasarıma sahip bir web si
 
 ## Ekran Görüntüleri
 
-| Çalışma Anı                         | Büyük Ekran                            | Küçük Ekran                           |
-|-------------------------------------------|----------------------------------------|----------------------------------------|
-| ![Çalışma Anı](./çalışma.png)                  | ![Büyük Ekran](./web.png)                    | ![Küçük Ekran](./mobile.png)                 |
+| Büyük Ekran                            | Küçük Ekran                           |
+|----------------------------------------|---------------------------------------|
+| ![Büyük Ekran](./web.png)              | ![Küçük Ekran](./mobile.png)          |
 
 ---
 
